@@ -14,56 +14,61 @@
 #include "utility.h"
 
 Point::Point() {
-	//Initializes x to 0
+    //Initializes x to 0
     x = 0;
     //Initializes y to 0
-	y = 0;
+    y = 0;
 }
 
 //Pobably needs fixed!
 Point::Point(int xVal, int yVal) {
-	//Checks the range of xVal and changes its value if needed
-    checkRange(xVal);
-    //Checks the range of yVal and changes its value if needed
-    checkRange(yVal);
     //Sets the value of x to xVal
     x = xVal;
     //Sets the value of y to yVal
-	y = yVal;
+    y = yVal;
 }
 
 void Point::setX(int xVal) {
-	//Sets the value of xVal to x
-    x = xVal;
+   //Checks the range of xVal and changes its value if needed
+   xVal = checkRange(xVal);
+   //Sets the value of xVal to x
+   x = xVal;
 }
 
-
 int Point::getX() {
-	//Returns the value of x
+    //Returns the value of x
     return x;
 }
 
 
 void Point::setY(int yVal) {
-	//Sets the value of yVal to y
+    //Checks the range of yVal and changes its value if needed
+    yVal = checkRange(yVal);
+    //Sets the value of yVal to y
     y = yVal;
 }
 
 
 int Point::getY() {
-	//Returns the value of y
+    //Returns the value of y
     return y;
 }
 
 //Needs to be fixed!
 void Point::read(istream& ins) {
-	cin >> x >> y;
+	//Used to pick up the parenthesis and comma in the file data
+	char dontMatter = '-';
+	//Reads the values of the data, the parenthesis and comma is disregarded
+	ins >> dontMatter;
+	ins >> x;
+	ins >> dontMatter;
+	ins >> y;
+	ins >> dontMatter;
 }
 
-//Needs to be fixed!
 void Point::write(ostream& outs) {
-	cout << "(" << x << "," << y << ")";
-
+     //Writes out the point into the file in the form (x,y)
+     outs << "(" << x << "," << y << ")";
 }
 
 int Point::checkRange(int val) {
