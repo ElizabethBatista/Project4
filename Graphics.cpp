@@ -32,8 +32,10 @@ void Graphics::clear() {
 }
 
 void Graphics::setPixel(int x, int y, Color color) {
-	//Sets a given pixel a given color
-    pixelData[x][y] = color;
+    //Sets a given pixel a given color
+    pixelData[x][y].setRed(color);
+    pixelData[x][y].setGreen(color);
+    pixelData[x][y].setBlue(color);
 }
 
 void Graphics::initArray() {
@@ -41,8 +43,8 @@ void Graphics::initArray() {
     for (int x = 0; x < DIMENSION; x++) {
 		//Goes through every column in the pixel data array
         for (int y = 0; y < DIMENSION; y++) {		
-			//Sets every pixel in the array to black (red green and blue are 0)
-            pixelData[x][y].setRed(0);
+			//Sets every pixel in the array to black (red, green, and blue are 0)
+            		pixelData[x][y].setRed(0);
 			pixelData[x][y].setGreen(0);
 			pixelData[x][y].setBlue(0);
 		}
