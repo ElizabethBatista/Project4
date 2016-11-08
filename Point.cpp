@@ -22,8 +22,12 @@ Point::Point() {
 
 //Pobably needs fixed!
 Point::Point(int xVal, int yVal) {
+    //Checks the range of xVal and changes its value if needed
+    xVal = checkRange(xVal);
     //Sets the value of x to xVal
     x = xVal;
+    //Checks the range of yVal and changes its value if needed
+    yVal = checkRange(yVal);
     //Sets the value of y to yVal
     y = yVal;
 }
@@ -36,6 +40,8 @@ void Point::setX(int xVal) {
 }
 
 int Point::getX() {
+    //Checks the range of xVal and changes its value if needed
+    xVal = checkRange(xVal);
     //Returns the value of x
     return x;
 }
@@ -50,6 +56,8 @@ void Point::setY(int yVal) {
 
 
 int Point::getY() {
+    //Checks the range of yVal and changes its value if needed
+    yVal = checkRange(yVal);
     //Returns the value of y
     return y;
 }
