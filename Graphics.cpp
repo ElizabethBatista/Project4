@@ -21,12 +21,33 @@
 
 using namespace std;
 
-// TODO: implement constructor, clear, setPixel, initArray.
+Graphics::Graphics() {
+	//Calls initArray in order to set every pixel to black
+    initArray();
+}
 
+void Graphics::clear() {
+	//Calls initArray in order to set every pixel to black
+    initArray();
+}
 
+void Graphics::setPixel(int x, int y, Color color) {
+	//Sets a given pixel a given color
+    pixelData[x][y] = color;
+}
 
-// Your code goes above this line.
-// Don't change the implementation below!
+void Graphics::initArray() {
+	//Goes through every row in the pixel data array
+    for (int x = 0; x < DIMENSION; x++) {
+		//Goes through every column in the pixel data array
+        for (int y = 0; y < DIMENSION; y++) {		
+			//Sets every pixel in the array to black (red green and blue are 0)
+            pixelData[x][y].setRed(0);
+			pixelData[x][y].setGreen(0);
+			pixelData[x][y].setBlue(0);
+		}
+	}
+}
 
 void Graphics::writeFile(string fileName) const
 {
