@@ -33,9 +33,7 @@ void Graphics::clear() {
 
 void Graphics::setPixel(int x, int y, Color color) {
     //Sets a given pixel a given color
-    pixelData[x][y].setRed(color);
-    pixelData[x][y].setGreen(color);
-    pixelData[x][y].setBlue(color);
+    pixelData[x][y] = color;
 }
 
 void Graphics::initArray() {
