@@ -119,6 +119,7 @@ Color Rectangle::getColorBottomLeft() {
 
 //Probably Needs to be Fixed!!!
 void Rectangle::read(istream& ins) {
+	void Rectangle::read(istream& ins) {
 	//Reads in the start point
 	ins >> start;
 	//Reads in the end point
@@ -127,13 +128,21 @@ void Rectangle::read(istream& ins) {
 	ins >> colorTopLeft;
 	//Reads in the color of the top right vertex
 	ins >> colorTopRight;
+	//If the function fails 
+	if (ins.fail()) {
+		//Clear the failstate
+		ins.clear();
+		//colorTopRight is set to the color value in colorTopLeft
+		colorTopRight = colorTopLeft;
+		//colorBottomRight is set to the color value in colorTopLeft
+		colorBottomRight = colorTopLeft;
+		//colorBottomLeft is set to the color value in colorTopLeft
+		colorBottomLeft = colorTopLeft;
+	}
 	//Reads in the color of the bottom right vertex
 	ins >> colorBottomRight;
 	//Reads in the color of the bottom left vertex
 	ins >> colorBottomLeft;
-	if (ins.fail()) {
-		ins.clear();
-	}
 }
 
 void Rectangle::write(ostream& outs) {
