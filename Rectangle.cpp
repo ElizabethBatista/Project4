@@ -120,27 +120,29 @@ Color Rectangle::getColorBottomLeft() {
 //Probably Needs to be Fixed!!!
 void Rectangle::read(istream& ins) {
 	//Reads in the start point
-    ins >> start;
-    //Reads in the end point
+	ins >> start;
+	//Reads in the end point
 	ins >> end;
-    //Reads in the color of the top left vertex
+	//Reads in the color of the top left vertex
 	ins >> colorTopLeft;
-	if (!ins.fail()) {
-        //Reads in the color of the top right vertex
-		ins >> colorTopRight;
-        //Reads in the color of the bottom right vertex
-		ins >> colorBottomRight;
-        //Reads in the color of the bottom left vertex
-		ins >> colorBottomLeft;
+	//Reads in the color of the top right vertex
+	ins >> colorTopRight;
+	//Reads in the color of the bottom right vertex
+	ins >> colorBottomRight;
+	//Reads in the color of the bottom left vertex
+	ins >> colorBottomLeft;
+	if (ins.fail()) {
+		ins.clear();
 	}
 }
 
 void Rectangle::write(ostream& outs) {
 	/*Writes out the start point, the end point, the color in the top left vertex, the top right
-    vertex, the bottom right vertex, and the bottom left vertex into the file*/
-    outs << " " << start << " " << end << " " << colorTopLeft << " " << 
-		colorTopRight << " " << " " << colorTopRight << colorBottomLeft;
+	vertex, the bottom right vertex, and the bottom left vertex into the file*/
+	outs << " " << start << " " << end << " " << colorTopLeft << " " <<
+		colorTopRight << " " << colorBottomRight << " " << colorBottomLeft;
 }
+
 
 istream& operator >> (istream& ins, Rectangle& rectangle)
 {
