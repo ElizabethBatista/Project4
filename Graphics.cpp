@@ -33,7 +33,7 @@ void Graphics::clear() {
 
 void Graphics::setPixel(int x, int y, Color color) {
     //Sets a given pixel a given color
-    pixelData[x][y] = color;
+    pixelData[y][x] = color;
 }
 
 void Graphics::initArray() {
