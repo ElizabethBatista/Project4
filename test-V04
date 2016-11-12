@@ -130,9 +130,9 @@ void testing_triangle() {
 	Triangle triangle4();
 	cout << "Triangle4: " << triangle4 << endl;
 	cout << "Triangle5: " << triangle5.getVertexOne() << 
-		triangle5.getVertexColorOne << triangle5.getVertexTwo() 
-		<< triangle5.getVertexColorTwo() << triangle5.getVertexThree()
-		<< triangle5.getVertexColorThree() << endl;
+		triangle5.getVertexOneColor << triangle5.getVertexTwo() 
+		<< triangle5.getVertexTwoColor() << triangle5.getVertexThree()
+		<< triangle5.getVertexThreeColor() << endl;
 	Triangle triangle6;
 	cout << "enter input for a triangle object:" << endl;
 	triangle6.read(cin);
